@@ -17,6 +17,11 @@ while True:
                   4.exit''')
             num=int(input("Enter the input"))   
             if num==1:
+                brand=str(input("Entre the brand"))
+                model=str(input("Entre the model"))
+                price=int(input("Entre the price"))
+                
+               
                 
 
         
