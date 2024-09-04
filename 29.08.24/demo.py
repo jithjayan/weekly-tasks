@@ -55,6 +55,8 @@ while True:
                 print(i['cname'],i['vnum'],i['phnum'],i['washtype'])
                 print('Amount payable') 
                 print(i['wprice'])
+elif
+pt
 
 
 
