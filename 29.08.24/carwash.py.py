@@ -1,4 +1,4 @@
-shop=[]
+shop=[{"cname":'hufu',"vnum":11,"phnum":3534,"washtype":'full',"wprice":10000}]
 while True:
     print('''
           1.Registration
@@ -46,7 +46,18 @@ while True:
                    i['pprice']=nprice
                    f=1               
          if f==0:
-              print("product not found")       
+              print("product not found")   
+    elif num==4:
+        a=int(input("Enter vehicle number"))
+        f=0
+        for i in shop:
+            if i['vnum']==a:
+                shop.remove(i)
+                f=1
+        if f==0:
+                print("id not found")
+
+
     elif num==6:
         z=input("v num")
         f=0
@@ -55,8 +66,6 @@ while True:
                 print(i['cname'],i['vnum'],i['phnum'],i['washtype'])
                 print('Amount payable') 
                 print(i['wprice'])
-elif
-pt
 
 
 
