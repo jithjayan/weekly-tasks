@@ -1,4 +1,4 @@
-user=[]
+user=[{'id': 1000, 'name': 'ww','age':'11', 'email': 'qq','phone': 920712, 'password': 'asd',}]
 shop=[]
 
 def register():
@@ -20,7 +20,7 @@ def register():
         phone=int(input('enter your number : '))
         password=input('enter the password : ')
         print('Registration Succesfull email id is your username')
-        user.append({'id':id,'name':name,'age':age,'email':email,'phone':phone,'password':password,'book':[]})
+        user.append({'id':id,'name':name,'age':age,'email':email,'phone':phone,'password':password,'products':[]})
 def login():
     usern=str(input('Enter Username : '))
     passw=input('Enter password : ')
@@ -49,10 +49,10 @@ while True:
        if f==1:
             while True:
                 print('''
-                1.Add book
-                2.View Book
-                3.Update Book Details
-                4.Delete book
+                1.Add products
+                2.View products
+                3.Update product Details
+                4.Delete product
                 5.View Users
                 6.Logout''')
 
@@ -71,7 +71,7 @@ while True:
                     break
                 else:
                     print('invalid Choice')
-        elif f==2:
+       elif f==2:
             while True:
                 print('''
                     1.view profile
@@ -98,5 +98,5 @@ while True:
                     break
                 else:
                     print('invalid option')
-        else:
+       else:
             print('invalid username or password')       
