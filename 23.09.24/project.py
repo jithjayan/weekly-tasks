@@ -34,6 +34,54 @@ def login():
             u=i
     return f,u
 
+def add_prdt():
+    print('ADD PRODUCTS')
+    if len(shop)==0:
+        id=1
+    else:
+        id=shop[-1]['id']+1
+    name=str(input('enter name : '))
+    price=int(input('enter the price : '))
+    stock=int(input('enter the stock availible : '))
+    shop.append({'id':id,'name':name,'price':price,'stock':stock,})
+def view_prdt():
+    print('BOOK DETAILS')
+    print("{:<5}{:<10}{:<10}{:<10}".format('ID','PRODUCT','PRICE','STOCK'))
+    print('_'*30)
+    for i in shop:
+        print("{:<5}{:<10}{:<10}{:<10}".format(i['id'],i['name'],i['price'],i['stock']))
+
+def update_prdt():
+    id=int(input('enter the id : '))
+    f=0
+    for i in shop:
+        if i['id']==id:
+            price=int(input('enter the price : '))
+            stock=int(input('enter the stock : '))
+            i['price']=price
+            i['stock']=stock
+            print('Details Updated')
+            f=1
+    if f==0:
+        print('invalid id')
+
+def delete_prdt():
+    id=int(input('enter the id : '))
+    f=0
+    for i in shop:
+        if i['id']==id:
+            shop.remove(i)
+            print('data deleted')
+            f=1
+    if f==0:
+        print('Invalid id')
+        
+def view_usr():
+    print('USERS DETAILS')
+    print("{:<10}{:<15}{:<15}{:<15}".format('ID','NAME','EMAIL','PHONE'))
+    print('_'*55)
+    for i in user:
+        print("{:<10}{:<15}{:<15}{:<15}".format(i['id'],i['name'],i['email'],i['phone']))
 
 
 while True:
@@ -58,13 +106,13 @@ while True:
 
                 c1=int(input('enter your choice : '))
                 if c1==1:
-                    add_bk()
+                    add_prdt()
                 elif c1==2:
-                    view_bk()
+                    view_prdt()
                 elif c1==3:
-                    update_bk()
+                    update_prdt()
                 elif c1==4:
-                    delete_bk()
+                    delete_prdt()
                 elif c1==5:
                     view_usr()
                 elif c1==6:
@@ -75,7 +123,7 @@ while True:
             while True:
                 print('''
                     1.view profile
-                    2.view book
+                    2.view products
                     3.update profile
                     4.Rent a book
                     5.Return a book
