@@ -1,4 +1,4 @@
-user=[{'id': 1000, 'name': 'ww','age':'11', 'email': 'qq','phone': 920712, 'password': 'asd',}]
+user=[{'id': 1000, 'name': 'ww','age':'11', 'email': 'qq','phone': 920712, 'password': 'asd','products':[1]}]
 shop=[]
 
 def register():
@@ -83,6 +83,20 @@ def view_usr():
     for i in user:
         print("{:<10}{:<15}{:<15}{:<15}".format(i['id'],i['name'],i['email'],i['phone']))
 
+def view_pro(u):
+    print('NAME : ',u['name'])
+    print('ID : ',u['id'])
+    print('Email : ',u['email'])
+    print('Phone : ',u['phone'])
+    print('Password : ',u['password'])
+    print('products : ',u['products'])
+
+def update_usr(u):
+    phone=int(input('enter your number : '))
+    password=input('enter new password')
+    u['phone']=phone
+    u['password']=password
+    print('updated')
 
 while True:
     print('''
@@ -125,7 +139,7 @@ while True:
                     1.view profile
                     2.view products
                     3.update profile
-                    4.Rent a book
+                    4.buy a book
                     5.Return a book
                     6.Books in hand
                     7.logout''')
@@ -133,16 +147,16 @@ while True:
                 if c1==1:
                     view_pro(u)
                 elif c1==2:
-                    view_bk()
+                    view_prdt()
                 elif c1==3:
                     update_usr(u)
                 elif c1==4:
-                    rent(u)
-                elif c1==5:
-                    return_bk(u)
-                elif c1==6:
-                    bkhnd(u)
-                elif c1==7:
+                    # rent(u)
+                # elif c1==5:
+                    # return_bk(u)
+                # elif c1==6:
+                    # bkhnd(u)
+                # elif c1==7:
                     break
                 else:
                     print('invalid option')
