@@ -1,5 +1,5 @@
-user=[{'id': 1000, 'name': 'ww','age':'11', 'email': 'qq','phone': 920712, 'password': 'asd','products':[1]}]
-shop=[]
+  user=[{'id': 1000, 'name': 'ww','age':'11', 'email': 'qq','phone': 920712, 'password': 'asd','products':[1]}]
+shop=[{'id': 1, 'name': 'aa', 'price': 11, 'stock': 22}]
 
 def register():
     print('Registration Page')
@@ -43,7 +43,7 @@ def add_prdt():
     name=str(input('enter name : '))
     price=int(input('enter the price : '))
     stock=int(input('enter the stock availible : '))
-    shop.append({'id':id,'name':name,'price':price,'stock':stock,})
+    shop.append({'id':id,'name':name,'price':price,'stock':stock})
 def view_prdt():
     print('BOOK DETAILS')
     print("{:<5}{:<10}{:<10}{:<10}".format('ID','PRODUCT','PRICE','STOCK'))
@@ -97,7 +97,22 @@ def update_usr(u):
     u['phone']=phone
     u['password']=password
     print('updated')
-
+    
+def buy(u):
+    id=int(input('enter the id : '))
+    f=0
+    for i in shop:
+        if i['id']==id:
+            f=1
+            i['stock']-=1
+            u['products'].append(id)
+            print('product purchased')
+    if f==0:
+        print('invalid ID')
+        
+def order(u):
+    print(u['products'])        
+        
 while True:
     print('''
           1.Register
@@ -139,10 +154,9 @@ while True:
                     1.view profile
                     2.view products
                     3.update profile
-                    4.buy a book
-                    5.Return a book
-                    6.Books in hand
-                    7.logout''')
+                    4.buy product 
+                    5.orders
+                    6.logout''')
                 c1=int(input('enter your choice : '))
                 if c1==1:
                     view_pro(u)
@@ -151,12 +165,10 @@ while True:
                 elif c1==3:
                     update_usr(u)
                 elif c1==4:
-                    # rent(u)
-                # elif c1==5:
-                    # return_bk(u)
-                # elif c1==6:
-                    # bkhnd(u)
-                # elif c1==7:
+                    buy(u)
+                elif c1==5:
+                    order(u)
+                elif c1==6:
                     break
                 else:
                     print('invalid option')
