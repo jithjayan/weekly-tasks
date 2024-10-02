@@ -1,4 +1,4 @@
-  user=[{'id': 1000, 'name': 'ww','age':'11', 'email': 'qq','phone': 920712, 'password': 'asd','products':[1]}]
+user=[{'id': 1000, 'name': 'ww','age':'11', 'email': 'qq','phone': 920712, 'password': 'asd','products':[1]}]
 shop=[{'id': 1, 'name': 'aa', 'price': 11, 'stock': 22}]
 
 def register():
