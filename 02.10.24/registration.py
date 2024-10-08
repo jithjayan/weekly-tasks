@@ -1,5 +1,5 @@
 # user=[]
-from list import user
+from project import user
 def register():
     print('Registration Page')
     if len(user)==0:
