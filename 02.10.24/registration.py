@@ -1,5 +1,5 @@
-# user=[]
-from project import user
+user=[]
+
 def register():
     print('Registration Page')
     if len(user)==0:
@@ -20,4 +20,6 @@ def register():
         password=input('enter the password : ')
         print('Registration Succesfull email id is your username')
         user.append({'id':id,'name':name,'age':age,'email':email,'phone':phone,'password':password,'products':[]})
+
+        
 
