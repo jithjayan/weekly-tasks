@@ -1,4 +1,4 @@
-user=[]
+user=[{'id': 1000, 'name': 'ww', 'email': 'qq','phone': 920712, 'password': 'asd','tickets':[1]}]
 
 def register():
     print('Registration Page')
@@ -15,11 +15,10 @@ def register():
             register()
     if f==0:
         name=str(input('enter your name : '))
-        age=int(input('enter your age : '))
+        # age=int(input('enter your age : '))
         phone=int(input('enter your number : '))
         password=input('enter the password : ')
         print('Registration Succesfull email id is your username')
-        user.append({'id':id,'name':name,'age':age,'email':email,'phone':phone,'password':password,'products':[]})
+        user.append({'id':id,'name':name,'email':email,'phone':phone,'password':password,'tickets':[]})
 
         
-
